@@ -1,55 +1,32 @@
 package com.example.demo.entity;
-import java.util.Arrays;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Document {
     private int id;
     private String dmsDocPath;
     private int dmsDocReferenceId;
-    private byte[] fileContent;
+    private String fileContent;
     private String fileName;
-    private int fileSize;
+    private long fileSize;
     private String fileType;
     private String title;
     private int dmsEventId;
     private String description;
     private int filePurposeCode;
     private String dmsReference;
-    private String activeCode;
+    private char activeCode;
     private String statusCode;
-    private String createdOn;
+    private LocalDateTime createdOn;
     private String createdBy;
     private String lastUpdatedBy;
-    private String lastAuthorizedOn;
-    private String lastAuthorizedBy;
+    private LocalDateTime lastAuthorisedOn;
+    private String lastAuthorisedBy;
 
-    public Document(int id, String dmsDocPath, int dmsDocReferenceId, byte[] fileContent, String fileName,
-                    int fileSize, String fileType, String title, int dmsEventId, String description,
-                    int filePurposeCode, String dmsReference, String activeCode, String statusCode,
-                    String createdOn, String createdBy, String lastUpdatedBy, String lastAuthorizedOn,
-                    String lastAuthorizedBy) {
-        this.id = id;
-        this.dmsDocPath = dmsDocPath;
-        this.dmsDocReferenceId = dmsDocReferenceId;
-        this.fileContent = fileContent;
-        this.fileName = fileName;
-        this.fileSize = fileSize;
-        this.fileType = fileType;
-        this.title = title;
-        this.dmsEventId = dmsEventId;
-        this.description = description;
-        this.filePurposeCode = filePurposeCode;
-        this.dmsReference = dmsReference;
-        this.activeCode = activeCode;
-        this.statusCode = statusCode;
-        this.createdOn = createdOn;
-        this.createdBy = createdBy;
-        this.lastUpdatedBy = lastUpdatedBy;
-        this.lastAuthorizedOn = lastAuthorizedOn;
-        this.lastAuthorizedBy = lastAuthorizedBy;
+    // Constructor
+    public Document() {
     }
 
-   
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -74,11 +51,11 @@ public class Document {
         this.dmsDocReferenceId = dmsDocReferenceId;
     }
 
-    public byte[] getFileContent() {
+    public String getFileContent() {
         return fileContent;
     }
 
-    public void setFileContent(byte[] fileContent) {
+    public void setFileContent(String fileContent) {
         this.fileContent = fileContent;
     }
 
@@ -90,11 +67,11 @@ public class Document {
         this.fileName = fileName;
     }
 
-    public int getFileSize() {
+    public long getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(int fileSize) {
+    public void setFileSize(long fileSize) {
         this.fileSize = fileSize;
     }
 
@@ -146,11 +123,11 @@ public class Document {
         this.dmsReference = dmsReference;
     }
 
-    public String getActiveCode() {
+    public char getActiveCode() {
         return activeCode;
     }
 
-    public void setActiveCode(String activeCode) {
+    public void setActiveCode(char activeCode) {
         this.activeCode = activeCode;
     }
 
@@ -162,11 +139,11 @@ public class Document {
         this.statusCode = statusCode;
     }
 
-    public String getCreatedOn() {
+    public LocalDateTime getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(String createdOn) {
+    public void setCreatedOn(LocalDateTime createdOn) {
         this.createdOn = createdOn;
     }
 
@@ -186,45 +163,44 @@ public class Document {
         this.lastUpdatedBy = lastUpdatedBy;
     }
 
-    public String getLastAuthorizedOn() {
-        return lastAuthorizedOn;
+    public LocalDateTime getLastAuthorisedOn() {
+        return lastAuthorisedOn;
     }
 
-    public void setLastAuthorizedOn(String lastAuthorizedOn) {
-        this.lastAuthorizedOn = lastAuthorizedOn;
+    public void setLastAuthorisedOn(LocalDateTime lastAuthorisedOn) {
+        this.lastAuthorisedOn = lastAuthorisedOn;
     }
 
-    public String getLastAuthorizedBy() {
-        return lastAuthorizedBy;
+    public String getLastAuthorisedBy() {
+        return lastAuthorisedBy;
     }
 
-    public void setLastAuthorizedBy(String lastAuthorizedBy) {
-        this.lastAuthorizedBy = lastAuthorizedBy;
+    public void setLastAuthorisedBy(String lastAuthorisedBy) {
+        this.lastAuthorisedBy = lastAuthorisedBy;
     }
 
-   
-//    @Override
-//    public String toString() {
-//        return "Document{" +
-//                "id=" + id +
-//                ", dmsDocPath='" + dmsDocPath + '\'' +
-//                ", dmsDocReferenceId=" + dmsDocReferenceId +
-//                ", fileContent=" + Arrays.toString(fileContent) +
-//                ", fileName='" + fileName + '\'' +
-//                ", fileSize=" + fileSize +
-//                ", fileType='" + fileType + '\'' +
-//                ", title='" + title + '\'' +
-//                ", dmsEventId=" + dmsEventId +
-//                ", description='" + description + '\'' +
-//                ", filePurposeCode=" + filePurposeCode +
-//                ", dmsReference='" + dmsReference + '\'' +
-//                ", activeCode='" + activeCode + '\'' +
-//                ", statusCode='" + statusCode + '\'' +
-//                ", createdOn='" + createdOn + '\'' +
-//                ", createdBy='" + createdBy + '\'' +
-//                ", lastUpdatedBy='" + lastUpdatedBy + '\'' +
-//                ", lastAuthorizedOn='" + lastAuthorizedOn + '\'' +
-//                ", lastAuthorizedBy='" + lastAuthorizedBy + '\'' +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Document{" +
+                "id=" + id +
+                ", dmsDocPath='" + dmsDocPath + '\'' +
+                ", dmsDocReferenceId=" + dmsDocReferenceId +
+                ", fileContent='" + fileContent + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", fileSize=" + fileSize +
+                ", fileType='" + fileType + '\'' +
+                ", title='" + title + '\'' +
+                ", dmsEventId=" + dmsEventId +
+                ", description='" + description + '\'' +
+                ", filePurposeCode=" + filePurposeCode +
+                ", dmsReference='" + dmsReference + '\'' +
+                ", activeCode=" + activeCode +
+                ", statusCode='" + statusCode + '\'' +
+                ", createdOn=" + createdOn +
+                ", createdBy='" + createdBy + '\'' +
+                ", lastUpdatedBy='" + lastUpdatedBy + '\'' +
+                ", lastAuthorisedOn=" + lastAuthorisedOn +
+                ", lastAuthorisedBy='" + lastAuthorisedBy + '\'' +
+                '}';
+    }
 }
