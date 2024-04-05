@@ -2,141 +2,75 @@ package com.example.demo.entity;
 import java.time.LocalDateTime;
 
 public class Document {
-    private int id;
-    private String dmsDocPath;
-    private int dmsDocReferenceId;
-    private String fileContent;
-    private String fileName;
-    private long fileSize;
-    private String fileType;
-    private String title;
-    private int dmsEventId;
-    private String description;
-    private int filePurposeCode;
-    private String dmsReference;
-    private char activeCode;
-    private String statusCode;
+    private byte[] fileContent;
+    private Long lastAuthorisedBy;
+    private Long id;
+    private Long lastUpdatedBy;
+    private Long dmsEventId;
+    private Long createdBy;
     private LocalDateTime createdOn;
-    private String createdBy;
-    private String lastUpdatedBy;
     private LocalDateTime lastAuthorisedOn;
-    private String lastAuthorisedBy;
-
-    // Constructor
-    public Document() {
-    }
+    private LocalDateTime lastUpdatedOn;
+    private String fileType;
+    private String description;
+    private String fileSize;
+    private String dmsDocPath;
+    private String dmsDocReferenceId;
+    private String statusCode;
+    private String activeCode;
+    private String title;
+    private String fileName;
+    private String dmsReference;
+    private String filePurposeCode;
 
     // Getters and Setters
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDmsDocPath() {
-        return dmsDocPath;
-    }
-
-    public void setDmsDocPath(String dmsDocPath) {
-        this.dmsDocPath = dmsDocPath;
-    }
-
-    public int getDmsDocReferenceId() {
-        return dmsDocReferenceId;
-    }
-
-    public void setDmsDocReferenceId(int dmsDocReferenceId) {
-        this.dmsDocReferenceId = dmsDocReferenceId;
-    }
-
-    public String getFileContent() {
+    public byte[] getFileContent() {
         return fileContent;
     }
 
-    public void setFileContent(String fileContent) {
+    public void setFileContent(byte[] fileContent) {
         this.fileContent = fileContent;
     }
 
-    public String getFileName() {
-        return fileName;
+    public Long getLastAuthorisedBy() {
+        return lastAuthorisedBy;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setLastAuthorisedBy(Long lastAuthorisedBy) {
+        this.lastAuthorisedBy = lastAuthorisedBy;
     }
 
-    public long getFileSize() {
-        return fileSize;
+    public Long getId() {
+        return id;
     }
 
-    public void setFileSize(long fileSize) {
-        this.fileSize = fileSize;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getFileType() {
-        return fileType;
+    public Long getLastUpdatedBy() {
+        return lastUpdatedBy;
     }
 
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
+    public void setLastUpdatedBy(Long lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getDmsEventId() {
+    public Long getDmsEventId() {
         return dmsEventId;
     }
 
-    public void setDmsEventId(int dmsEventId) {
+    public void setDmsEventId(Long dmsEventId) {
         this.dmsEventId = dmsEventId;
     }
 
-    public String getDescription() {
-        return description;
+    public Long getCreatedBy() {
+        return createdBy;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getFilePurposeCode() {
-        return filePurposeCode;
-    }
-
-    public void setFilePurposeCode(int filePurposeCode) {
-        this.filePurposeCode = filePurposeCode;
-    }
-
-    public String getDmsReference() {
-        return dmsReference;
-    }
-
-    public void setDmsReference(String dmsReference) {
-        this.dmsReference = dmsReference;
-    }
-
-    public char getActiveCode() {
-        return activeCode;
-    }
-
-    public void setActiveCode(char activeCode) {
-        this.activeCode = activeCode;
-    }
-
-    public String getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(String statusCode) {
-        this.statusCode = statusCode;
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
     }
 
     public LocalDateTime getCreatedOn() {
@@ -147,22 +81,6 @@ public class Document {
         this.createdOn = createdOn;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getLastUpdatedBy() {
-        return lastUpdatedBy;
-    }
-
-    public void setLastUpdatedBy(String lastUpdatedBy) {
-        this.lastUpdatedBy = lastUpdatedBy;
-    }
-
     public LocalDateTime getLastAuthorisedOn() {
         return lastAuthorisedOn;
     }
@@ -171,36 +89,99 @@ public class Document {
         this.lastAuthorisedOn = lastAuthorisedOn;
     }
 
-    public String getLastAuthorisedBy() {
-        return lastAuthorisedBy;
+    public LocalDateTime getLastUpdatedOn() {
+        return lastUpdatedOn;
     }
 
-    public void setLastAuthorisedBy(String lastAuthorisedBy) {
-        this.lastAuthorisedBy = lastAuthorisedBy;
+    public void setLastUpdatedOn(LocalDateTime lastUpdatedOn) {
+        this.lastUpdatedOn = lastUpdatedOn;
     }
 
-    @Override
-    public String toString() {
-        return "Document{" +
-                "id=" + id +
-                ", dmsDocPath='" + dmsDocPath + '\'' +
-                ", dmsDocReferenceId=" + dmsDocReferenceId +
-                ", fileContent='" + fileContent + '\'' +
-                ", fileName='" + fileName + '\'' +
-                ", fileSize=" + fileSize +
-                ", fileType='" + fileType + '\'' +
-                ", title='" + title + '\'' +
-                ", dmsEventId=" + dmsEventId +
-                ", description='" + description + '\'' +
-                ", filePurposeCode=" + filePurposeCode +
-                ", dmsReference='" + dmsReference + '\'' +
-                ", activeCode=" + activeCode +
-                ", statusCode='" + statusCode + '\'' +
-                ", createdOn=" + createdOn +
-                ", createdBy='" + createdBy + '\'' +
-                ", lastUpdatedBy='" + lastUpdatedBy + '\'' +
-                ", lastAuthorisedOn=" + lastAuthorisedOn +
-                ", lastAuthorisedBy='" + lastAuthorisedBy + '\'' +
-                '}';
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public String getDmsDocPath() {
+        return dmsDocPath;
+    }
+
+    public void setDmsDocPath(String dmsDocPath) {
+        this.dmsDocPath = dmsDocPath;
+    }
+
+    public String getDmsDocReferenceId() {
+        return dmsDocReferenceId;
+    }
+
+    public void setDmsDocReferenceId(String dmsDocReferenceId) {
+        this.dmsDocReferenceId = dmsDocReferenceId;
+    }
+
+    public String getStatusCode() {
+        return statusCode;
+    }
+
+    public void setStatusCode(String statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    public String getActiveCode() {
+        return activeCode;
+    }
+
+    public void setActiveCode(String activeCode) {
+        this.activeCode = activeCode;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getDmsReference() {
+        return dmsReference;
+    }
+
+    public void setDmsReference(String dmsReference) {
+        this.dmsReference = dmsReference;
+    }
+
+    public String getFilePurposeCode() {
+        return filePurposeCode;
+    }
+
+    public void setFilePurposeCode(String filePurposeCode) {
+        this.filePurposeCode = filePurposeCode;
     }
 }
